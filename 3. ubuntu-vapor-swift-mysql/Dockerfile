@@ -20,8 +20,6 @@ RUN apt-get update \
     clang \
     binutils \
     git \
-    libmysqlclient20 \
-    libmysqlclient-dev \
     libicu-dev \
     wget \
     libxml2 \
@@ -41,10 +39,4 @@ RUN swiftc -h
 # Install Vapor Toolbox
 RUN curl -sL toolbox.vapor.sh | bash
 
-ADD config.sh /usr/local/bin/config.sh
-RUN chmod 777 /usr/local/bin/config.sh
-
-
 EXPOSE 8080
-
-CMD /usr/local/bin/config.sh
