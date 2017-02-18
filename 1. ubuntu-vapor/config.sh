@@ -1,5 +1,5 @@
 cd /
 cd vapor
-vapor build
+#vapor build
 vapor run
-/bin/bash
+#/bin/bash

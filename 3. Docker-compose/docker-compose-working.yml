@@ -1,0 +1,19 @@
+version: '3'
+services:
+    db:
+        image: anandk/ubuntu-mysql:16.04
+        container_name: db_container
+        expose:
+            - "3306"
+        pid: "host"
+
+    backend:
+        image: anandk/ubuntu-vapor-new5:16.04
+        volumes:
+            - .:/vapor
+        ports:
+            - "8080:8080"
+        container_name: web_app
+        expose:
+            - "8080"
+        pid: "host"

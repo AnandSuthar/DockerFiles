@@ -1,0 +1,24 @@
+version: '3'
+services:
+    my_ubuntu:
+#        build: .   #(this will build Dockerfile and create an image)
+#            context: ./path/to/root/directory
+#            dockerfile: Dockerfile-alternet
+#            args:
+#                buildno: 1
+#                password: secret
+#                image: hello-world:latest #(after build this will be name of image)
+        image: ubuntu:16.04     #(specify the image to start the container from)
+#        entrypoint: /bin/bash
+        command: echo hello-world #(override default command)
+        container_name: my-web-container
+#        tty: true
+        expose:
+            - "8080"
+            - "9090"
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://www.google.com"]
+            interval: 5s
+            timeout: 10s
+            retries: 3
+        pid: "host"

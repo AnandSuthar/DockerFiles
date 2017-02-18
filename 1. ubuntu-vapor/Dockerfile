@@ -16,18 +16,19 @@ WORKDIR ${WORK_DIR}
 # Linux OS utils and libraries
 RUN apt-get update \
 && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    mysql-server \
     clang \
     binutils \
     git \
-    libmysqlclient20 \
-    libmysqlclient-dev \
     libicu-dev \
     wget \
     libxml2 \
     libcurl3 \
-    curl && \
-    rm -r /var/lib/apt/lists/*
+    curl \
+
+    mysql-server \
+    libmysqlclient20 \
+    libmysqlclient-dev \
+    && rm -r /var/lib/apt/lists/*
 
 
 # Install Swift compiler
@@ -46,5 +47,4 @@ RUN chmod 777 /usr/local/bin/config.sh
 
 
 EXPOSE 8080
-
 CMD /usr/local/bin/config.sh
