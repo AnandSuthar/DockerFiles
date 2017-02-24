@@ -1,7 +1,9 @@
 #!/bin/bash
 #if [[ ! "$(/usr/sbin/service mysql status)" =~ "start/running" ]]
 #then
-    /usr/sbin/service mysql start
+#    /usr/sbin/service mysql start
+service mysql start
+
 #fi
 
 mysql -u root << EOF
@@ -10,6 +12,6 @@ SET PASSWORD FOR root@'localhost' = PASSWORD('admin');
 exit
 EOF
 
-rm /usr/local/bin/config.sh
+#rm /usr/local/bin/config.sh
 
 /bin/bash

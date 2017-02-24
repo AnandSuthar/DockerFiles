@@ -16,18 +16,18 @@ WORKDIR ${WORK_DIR}
 # Linux OS utils and libraries
 RUN apt-get update \
 && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    clang \
-    binutils \
-    git \
-    libicu-dev \
-    wget \
-    libxml2 \
-    libcurl3 \
-    curl \
-    mysql-server \
-    libmysqlclient20 \
-    libmysqlclient-dev \
-    && rm -r /var/lib/apt/lists/*
+clang \
+binutils \
+git \
+libicu-dev \
+wget \
+libxml2 \
+libcurl3 \
+curl \
+mysql-server \
+libmysqlclient20 \
+libmysqlclient-dev \
+&& rm -r /var/lib/apt/lists/*
 
 
 # Install Swift compiler
