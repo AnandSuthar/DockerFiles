@@ -1,7 +1,7 @@
 FROM nginx:latest
 
 
-ADD vapor.conf /etc/nginx/conf.d/
+ADD nginx.conf /etc/nginx/conf.d/
 
 RUN rm /etc/nginx/conf.d/default.conf
 

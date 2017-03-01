@@ -1,0 +1,19 @@
+version: '2'
+services:
+        vapor-app:
+                image: anandk/ubuntu-vapor-mysql
+                ports:
+                    - "8080:8080"
+                expose:
+                    - "8080"
+                volumes:
+                    - .:/vapor
+                container_name: vapor-app
+        nginx:
+                image: anandk/vapor-nginx
+                ports:
+                    - "80:80"
+                expose:
+                    - "80"
+                links:
+                    - vapor-app:nginx
