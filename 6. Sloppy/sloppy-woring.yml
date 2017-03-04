@@ -1,0 +1,10 @@
+version: "v1"
+project: "my-vapor-app"
+services:
+    backend:
+        anidhere:
+            image: "anandk/ubuntu-vapor-mysql"
+            domain: "vaporappanand.sloppy.zone"
+            port: 8080
+            volumes:
+                - path: "/vapor"
